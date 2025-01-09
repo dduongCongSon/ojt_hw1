@@ -1,0 +1,9 @@
+﻿body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F5EFE7;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
