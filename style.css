@@ -1,9 +1,152 @@
-﻿body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #F5EFE7;
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container{
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #F5E6E0;  /* Màu kem nhạt làm nền */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #D5C3B6;  /* Màu be cho container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(27, 43, 75, 0.1);  /* Shadow với màu navy */
+}
+
+h1 {
+    text-align: center;
+    color: #1B2B4B;  /* Màu navy cho tiêu đề */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#todo-form {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #1B2B4B;  /* Viền navy */
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #F5E6E0;  /* Nền input màu kem */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #1B2B4B;  /* Nút màu navy */
+    color: #F5E6E0;  /* Chữ màu kem */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #2d446e;  /* Màu navy sáng hơn khi hover */
+}
+
+#todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #F5E6E0;  /* Nền item màu kem */
+    border: 1px solid #1B2B4B;  /* Viền navy */
+    margin-bottom: 8px;
+    border-radius: 4px;
+    cursor: move;
+    transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+    background-color: #f0dcd5;  /* Màu kem tối hơn khi hover */
+}
+
+.todo-item.dragging {
+    opacity: 0.5;
+    background-color: #D5C3B6;  /* Màu be khi kéo */
+}
+
+.todo-checkbox {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #1B2B4B;  /* Màu checkbox là navy */
+}
+
+.todo-text {
+    flex: 1;
+    color: #1B2B4B;  /* Chữ màu navy */
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: #6b7790;  /* Màu navy nhạt hơn khi completed */
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 6px 12px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #1B2B4B;  /* Nút edit màu navy */
+}
+
+.edit-btn:hover {
+    background-color: #2d446e;
+}
+
+.delete-btn {
+    background-color: #1B2B4B;  /* Nút delete màu navy */
+}
+
+.delete-btn:hover {
+    background-color: #2d446e;
+}
+
+.edit-input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 5px;
+    border: 2px solid #1B2B4B;
+    border-radius: 3px;
+    background-color: #F5E6E0;
+}
+
+/* Thêm animation cho các tương tác */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-item {
+    animation: fadeIn 0.3s ease;
 }
